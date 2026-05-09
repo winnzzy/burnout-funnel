@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When Rest Stops Working — High-Functioning Burnout Assessment</title>
+<meta name="description" content="Discover if you have high-functioning burnout. A 3-minute emotional self-assessment for exhausted, high-achieving adults.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════
+   DESIGN SYSTEM
+═══════════════════════════════════ */
+:root {
+  --ink: #18181E;
+  --ink-soft: #36364A;
+  --mist: #7C7C96;
+  --fog: #B8B8CC;
+  --ghost: #DCDCE8;
+  --paper: #F8F7F4;
+  --off-white: #FDFCFA;
+  --warm-white: #FFFFFF;
+
+  --sage: #4E6E5D;
+  --sage-mid: #6B8F7A;
+  --sage-light: #E6EFE9;
+  --sage-pale: #F2F7F4;
+
+  --amber: #B8722E;
+  --amber-mid: #CC9060;
+  --amber-light: #FAF0E6;
+  --amber-pale: #FDF6EE;
+
+  --rose: #924F67;
+  --rose-mid: #B8738A;
+  --rose-light: #F5E9ED;
+  --rose-pale: #FAF2F5;
+
+  --line: rgba(24,24,30,0.07);
+  --line-med: rgba(24,24,30,0.12);
+  --shadow-soft: 0 2px 24px rgba(24,24,30,0.06);
+  --shadow-card: 0 4px 32px rgba(24,24,30,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Subtle grain */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.5;
+}
+
+/* ── LAYOUT ── */
+.container { max-width: 700px; margin: 0 auto; padding: 0 28px; }
+.container-wide { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+/* ── TYPE ── */
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.serif-body {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* ── DIVIDERS ── */
+.hairline { width: 100%; height: 1px; background: var(--line); }
+.hairline-med { width: 100%; height: 1px; background: var(--line-med); }
+.ornament-divider {
+  text-align: center;
+  color: var(--ghost);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  letter-spacing: 0.3em;
+  padding: 12px 0;
+}
+
+/* ════════════════════════════════
+   SECTION: HERO
+════════════════════════════════ */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 28px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft gradient background */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(78,110,93,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, rgba(184,114,46,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  margin-bottom: 32px;
+  animation: fadeSlideUp 0.8s ease both;
+}
+
+.hero-title {
+  font-size: clamp(42px, 7.5vw, 68px);
+  margin-bottom: 28px;
+  color: var(--ink);
+  animation: fadeSlideUp 0.8s 0.1s ease both;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.hero-subtitle {
+  font-family: 'Lora', serif;
+  font-size: clamp(17px, 2.8vw, 22px);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+  line-height: 1.65;
+  max-width: 580px;
+  animation: fadeSlideUp 0.8s 0.2s ease both;
+}
+
+.hero-lead {
+  font-size: 15px;
+  color: var(--mist);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 52px;
+  animation: fadeSlideUp 0.8s 0.3s ease both;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 340px;
+  animation: fadeSlideUp 0.8s 0.4s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--ink);
+  color: var(--warm-white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  padding: 17px 36px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover { background: var(--ink-soft); transform: translateY(-1px); }
+
+.btn-primary .arrow {
+  transition: transform 0.25s ease;
+  font-size: 16px;
+}
+.btn-primary:hover .arrow { transform: translateX(4px); }
+
+.hero-disclaimer {
+  font-size: 11.5px;
+  color: var(--fog);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.hero-trust-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--mist);
+}
+
+.trust-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ghost);
+  flex-shrink: 0;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ════════════════════════════════
+   SECTION: EMOTIONAL MIRROR
+════════════════════════════════ */
+#mirror-section {
+  background: var(--off-white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 96px 28px;
+}
+
+.mirror-intro {
+  margin-bottom: 64px;
+}
+
+.mirror-intro .eyebrow { margin-bottom: 20px; }
+
+.mirror-headline {
+  font-size: clamp(26px, 4.5vw, 38px);
+  color: var(--ink);
+  margin-bottom: 20px;
+  max-width: 580px;
+}
+
+.mirror-subtext {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  max-width: 560px;
+}
+
+.mirror-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 60px;
+  background: var(--line);
+}
+
+.mirror-card {
+  background: var(--off-white);
+  padding: 28px 30px;
+  transition: background 0.2s ease;
+}
+
+.mirror-card:hover { background: var(--warm-white); }
+
+.mirror-card-icon {
+  font-size: 20px;
+  margin-bottom: 14px;
+  opacity: 0.5;
+}
+
+.mirror-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.mirror-card-body {
+  font-size: 13.5px;
+  color: var(--mist);
+  line-height: 1.75;
+}
+
+.mirror-closing {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mirror-closing-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 3.5vw, 26px);
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 560px) {
+  .mirror-grid { grid-template-columns: 1fr; }
+}
+
+/* ════════════════════════════════
+   QUIZ SECTION WRAPPER
+════════════════════════════════ */
+#quiz-anchor {
+  padding: 80px 0 0;
+}
+
+.quiz-section-header {
+  text-align: center;
+  padding: 0 28px 56px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.quiz-section-header .eyebrow { margin-bottom: 16px; }
+
+.quiz-section-header .display {
+  font-size: clamp(26px, 4vw, 36px);
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.quiz-section-header p {
+  font-size: 15px;
+  color: var(--mist);
+  line-height: 1.8;
+}
+
+/* ════════════════════════════════
+   QUIZ SCREENS
+════════════════════════════════ */
+#intro-screen {
+  display: none; /* hidden — scroll-triggered CTA goes to quiz directly */
+}
+
+#quiz-screen {
+  display: none;
+  padding: 0 28px 80px;
+}
+
+.quiz-card {
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  padding: 48px 44px 44px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .quiz-card { padding: 32px 24px 28px; }
+}
+
+.progress-area { margin-bottom: 44px; }
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progress-label {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+.progress-count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.progress-bar-track {
+  height: 2px;
+  background: var(--ghost);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+}
+
+.question-wrap {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.question-wrap.visible { opacity: 1; transform: translateY(0); }
+
+.question-context {
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fog);
+  margin-bottom: 16px;
+}
+
+.question-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(21px, 3.8vw, 28px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.option-btn::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: var(--ink);
+  transition: width 0.2s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--line-med);
+  background: var(--warm-white);
+  color: var(--ink);
+}
+
+.option-btn.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--warm-white);
+}
+
+.option-btn.selected::before { width: 0; }
+
+.option-letter {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--fog);
+  flex-shrink: 0;
+  min-width: 14px;
+  transition: color 0.2s;
+}
+
+.option-btn:hover .option-letter { color: var(--mist); }
+.option-btn.selected .option-letter { color: rgba(255,255,255,0.45); }
+.option-text { flex: 1; }
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--fog);
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+
+.btn-back:hover { color: var(--mist); }
+.btn-back:disabled { opacity: 0; pointer-events: none; }
+
+.btn-next {
+  background: var(--ink);
+  color: var(--warm-white);
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  padding: 13px 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.btn-next.active { opacity: 1; pointer-events: all; }
+.btn-next.active:hover { background: var(--ink-soft); }
+
+/* ════════════════════════════════
+   LOADING
+════════════════════════════════ */
+#loading-screen {
+  display: none;
+  min-height: 60vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 28px;
+  text-align: center;
+}
+
+.loading-phrase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  min-height: 36px;
+  transition: opacity 0.35s ease;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.loading-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--ghost);
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(1); background: var(--ghost); }
+  40% { transform: scale(1.5); background: var(--ink); }
+}
+
+/* ════════════════════════════════
+   RESULTS
+════════════════════════════════ */
+#result-screen {
+  display: none;
+  padding: 0 28px 80px;
+  animation: resultReveal 0.8s ease both;
+}
+
+@keyframes resultReveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#result-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.result-header {
+  padding: 60px 0 48px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 48px;
+}
+
+.result-eyebrow { margin-bottom: 20px; }
+
+.result-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.result-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 5.5vw, 48px);
+  font-weight: 300;
+  line-height: 1.18;
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+}
+
+.result-subtitle {
+  font-family: 'Lora', serif;
+  font-size: clamp(16px, 2.6vw, 19px);
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 580px;
+}
+
+.mirror-recognition {
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  border-left-width: 3px;
+  padding: 28px 32px;
+  margin-bottom: 36px;
+}
+
+.mirror-recognition-title {
+  font-size: 10.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.mirror-recognition-item {
+  font-family: 'Lora', serif;
+  font-size: 15.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+  padding: 7px 0;
+  line-height: 1.5;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.mirror-recognition-item::before {
+  content: '—';
+  color: var(--ghost);
+  flex-shrink: 0;
+  font-style: normal;
+}
+
+.result-body-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.result-body-text strong { color: var(--ink); font-weight: 500; }
+
+.encouragement-block {
+  margin: 36px 0;
+  padding: 28px 32px;
+  border-radius: 2px;
+}
+
+.encouragement-block p {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.85;
+  font-style: italic;
+}
+
+/* ─ RESULT THEMES ─ */
+.theme-sage .result-tag { background: var(--sage-light); color: var(--sage); }
+.theme-sage .result-title { color: var(--sage); }
+.theme-sage .mirror-recognition { border-left-color: var(--sage); }
+.theme-sage .encouragement-block { background: var(--sage-pale); color: var(--sage); }
+.theme-sage .feature-bullet { color: var(--sage); }
+
+.theme-amber .result-tag { background: var(--amber-light); color: var(--amber); }
+.theme-amber .result-title { color: var(--amber); }
+.theme-amber .mirror-recognition { border-left-color: var(--amber); }
+.theme-amber .encouragement-block { background: var(--amber-pale); color: var(--amber); }
+.theme-amber .feature-bullet { color: var(--amber); }
+
+.theme-rose .result-tag { background: var(--rose-light); color: var(--rose); }
+.theme-rose .result-title { color: var(--rose); }
+.theme-rose .mirror-recognition { border-left-color: var(--rose); }
+.theme-rose .encouragement-block { background: var(--rose-pale); color: var(--rose); }
+.theme-rose .feature-bullet { color: var(--rose); }
+
+/* ════════════════════════════════
+   OFFER / BOOK SECTION
+════════════════════════════════ */
+.offer-section {
+  margin-top: 64px;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.offer-eyebrow { margin-bottom: 20px; }
+
+.offer-transition-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.offer-body {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.offer-book-card {
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  padding: 36px 36px 40px;
+  margin: 36px 0;
+}
+
+.offer-book-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.offer-book-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--mist);
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.offer-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.offer-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.feature-bullet {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.offer-pullquote {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--mist);
+  line-height: 1.75;
+  padding: 20px 0 28px;
+  border-top: 1px solid var(--line);
+}
+
+.btn-offer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--ink);
+  color: var(--warm-white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  padding: 18px 36px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.btn-offer:hover { background: var(--ink-soft); transform: translateY(-1px); }
+
+.offer-reassurance {
+  font-size: 12px;
+  color: var(--fog);
+  text-align: center;
+  font-style: italic;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════
+   TESTIMONIALS
+════════════════════════════════ */
+#testimonials {
+  background: var(--off-white);
+  border-top: 1px solid var(--line);
+  padding: 96px 28px;
+}
+
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-header .eyebrow { margin-bottom: 16px; }
+
+.section-header .display {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.section-header p {
+  font-size: 15px;
+  color: var(--mist);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.testimonials-grid {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--ghost);
+  position: absolute;
+  top: 16px;
+  left: 22px;
+}
+
+.testimonial-text {
+  font-family: 'Lora', serif;
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  padding-top: 28px;
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.testimonial-role {
+  font-size: 12px;
+  color: var(--fog);
+}
+
+.testimonial-stars {
+  color: var(--amber);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.testimonials-featured {
+  max-width: 700px;
+  margin: 20px auto 0;
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  padding: 40px 44px;
+  text-align: center;
+}
+
+.featured-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 3.5vw, 26px);
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.featured-attribution {
+  font-size: 12.5px;
+  color: var(--mist);
+}
+
+@media (max-width: 600px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-featured { padding: 28px 24px; }
+}
+
+/* ════════════════════════════════
+   FAQ
+════════════════════════════════ */
+#faq {
+  padding: 96px 28px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-header { margin-bottom: 52px; }
+.faq-header .eyebrow { margin-bottom: 16px; }
+.faq-header .display {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--ink);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0;
+}
+
+.faq-item:first-of-type { border-top: 1px solid var(--line); }
+
+.faq-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(17px, 2.8vw, 20px);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  user-select: none;
+}
+
+.faq-toggle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--fog);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.2s ease;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.faq-item.open .faq-toggle {
+  transform: rotate(45deg);
+  color: var(--mist);
+}
+
+.faq-answer {
+  font-size: 14.5px;
+  color: var(--mist);
+  line-height: 1.85;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* ════════════════════════════════
+   FINAL CTA
+════════════════════════════════ */
+#final-cta {
+  background: var(--ink);
+  padding: 96px 28px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#final-cta::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(78,110,93,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-eyebrow {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 24px;
+}
+
+.cta-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--warm-white);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.cta-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.85;
+  margin-bottom: 44px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-cta-final {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--warm-white);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 18px 44px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
+}
+
+.btn-cta-final:hover {
+  background: var(--paper);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+.cta-reassurance {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+}
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+footer {
+  padding: 32px 28px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+
+footer p {
+  font-size: 11.5px;
+  color: var(--fog);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════
+   FADE TRANSITIONS
+════════════════════════════════ */
+.fade-exit {
+  animation: fadeExit 0.3s ease forwards;
+}
+
+@keyframes fadeExit {
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════
+     HERO
+═══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner container">
+    <div class="eyebrow hero-eyebrow">Free Self-Assessment · 3 Minutes</div>
+
+    <h1 class="display hero-title">
+      You're Not Lazy.<br>
+      Your Brain May Just Be<br>
+      <em>Running on Empty.</em>
+    </h1>
+
+    <p class="hero-subtitle">
+      A short, honest assessment for the exhausted adults who still show up every day — and wonder why nothing feels the way it used to.
+    </p>
+
+    <p class="hero-lead">
+      If rest no longer feels restful. If you scroll without enjoying it. If you function well on the outside and feel hollow on the inside — this might finally explain why.
+    </p>
+
+    <div class="hero-cta-group">
+      <div class="hero-trust-row">
+        <div class="trust-item"><div class="trust-dot"></div>12 questions</div>
+        <div class="trust-item"><div class="trust-dot"></div>No sign-up</div>
+        <div class="trust-item"><div class="trust-dot"></div>Not clinical</div>
+      </div>
+      <button class="btn-primary" onclick="jumpToQuiz()">
+        <span>Take the Free Assessment</span>
+        <span class="arrow">→</span>
+      </button>
+      <p class="hero-disclaimer">For self-reflection only. Not a medical or clinical tool.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     EMOTIONAL MIRROR
+═══════════════════════════════ -->
+<section id="mirror-section">
+  <div class="container">
+    <div class="mirror-intro reveal">
+      <div class="eyebrow" style="margin-bottom:18px;">Does Any of This Sound Familiar?</div>
+      <h2 class="display mirror-headline">The exhaustion that nobody around you can see.</h2>
+      <p class="mirror-subtext" style="margin-top:16px;">
+        Most people with high-functioning burnout don't look burned out. They look capable, reliable, fine. The struggle is almost entirely interior. And that's exactly what makes it so difficult to name.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-wide">
+    <div class="mirror-grid reveal">
+      <div class="mirror-card">
+        <div class="mirror-card-icon">◎</div>
+        <div class="mirror-card-title">You wake up already tired</div>
+        <div class="mirror-card-body">Not just groggy — actually tired. Like sleep was a pause, not a reset. You lie there and feel the weight of the day before it's begun.</div>
+      </div>
+      <div class="mirror-card">
+        <div class="mirror-card-icon">◎</div>
+        <div class="mirror-card-title">Rest makes you more anxious</div>
+        <div class="mirror-card-body">A free afternoon arrives and instead of relief, there's a creeping guilt. Like you should be doing something. Like you haven't earned this. Like stopping isn't safe.</div>
+      </div>
+      <div class="mirror-card">
+        <div class="mirror-card-icon">◎</div>
+        <div class="mirror-card-title">You scroll without enjoying it</div>
+        <div class="mirror-card-body">You pick up your phone without deciding to. You put it down and pick it up again. It's not pleasure — it's more like filling silence. Keeping the quiet at bay.</div>
+      </div>
+      <div class="mirror-card">
+        <div class="mirror-card-icon">◎</div>
+        <div class="mirror-card-title">Simple things feel strangely heavy</div>
+        <div class="mirror-card-body">Replying to one email takes three mental passes. Making small decisions feels disproportionately hard. You reread paragraphs. Things that used to take minutes now take much longer.</div>
+      </div>
+      <div class="mirror-card">
+        <div class="mirror-card-icon">◎</div>
+        <div class="mirror-card-title">You feel emotionally flattened</div>
+        <div class="mirror-card-body">Not devastated. Not depressed, exactly. Just... less. Less moved. Less present. Like there's a glass layer between you and everything — including the things you used to care about.</div>
+      </div>
+      <div class="mirror-card">
+        <div class="mirror-card-icon">◎</div>
+        <div class="mirror-card-title">You've stopped being able to explain it</div>
+        <div class="mirror-card-body">When someone asks how you are, "fine" is the only honest option because the truth is too formless. You don't know how to describe something that has no clear edges, no obvious cause.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="mirror-closing reveal">
+      <p class="mirror-closing-quote">
+        "The hardest part isn't the exhaustion. It's the suspicion that this has somehow become your normal."
+      </p>
+      <button class="btn-primary" onclick="jumpToQuiz()">
+        <span>Find Out Where You Are</span>
+        <span class="arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     QUIZ SECTION
+═══════════════════════════════ -->
+<section id="quiz-anchor">
+  <div class="quiz-section-header reveal">
+    <div class="eyebrow">The Assessment</div>
+    <h2 class="display" style="margin-top:14px;">12 questions. Honest answers only.</h2>
+    <p style="margin-top:12px;">There are no right answers. There are no wrong answers. There are only the ones that are actually true for you right now.</p>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen">
+    <div class="container">
+      <div class="quiz-card">
+        <div class="progress-area">
+          <div class="progress-top">
+            <span class="progress-label">Progress</span>
+            <span class="progress-count" id="progress-count">1 of 12</span>
+          </div>
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="question-wrap" id="question-wrap">
+          <div class="question-context" id="question-context"></div>
+          <div class="question-text" id="question-text"></div>
+          <div class="options-grid" id="options-grid"></div>
+        </div>
+
+        <div class="nav-row">
+          <button class="btn-back" id="btn-back" onclick="prevQuestion()" disabled>← Back</button>
+          <button class="btn-next" id="btn-next" onclick="nextQuestion()">Continue →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen">
+    <div class="container">
+      <div class="loading-phrase" id="loading-words">Reading your responses…</div>
+      <div class="loading-dots">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START CARD (shown before quiz begins) -->
+  <div id="start-card" class="container">
+    <div class="quiz-card" style="text-align:center; padding: 56px 44px;">
+      <div class="eyebrow" style="margin-bottom:16px; display:block;">Self-Assessment</div>
+      <h3 class="display" style="font-size:clamp(24px,4vw,32px); margin-bottom:16px; color:var(--ink);">Ready when you are.</h3>
+      <p style="font-size:14.5px; color:var(--mist); line-height:1.8; max-width:420px; margin:0 auto 36px;">12 short questions. No clinical language. No right answers — only honest ones. Most people finish in under three minutes.</p>
+      <button class="btn-primary" style="margin: 0 auto;" onclick="beginQuiz()">
+        <span>Begin the Assessment</span>
+        <span class="arrow">→</span>
+      </button>
+      <p style="margin-top:20px; font-size:11.5px; color:var(--fog); font-style:italic;">Not a medical tool. For self-reflection only.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     RESULTS (dynamically populated)
+═══════════════════════════════ -->
+<section id="result-screen">
+  <div id="result-container" class="container"></div>
+</section>
+
+<!-- ═══════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">What Readers Say</div>
+      <h2 class="display" style="margin-top:14px;">Finally, something that explained it.</h2>
+      <p style="margin-top:12px;">Real words from real people who recognized themselves.</p>
+    </div>
+  </div>
+  <div class="container-wide">
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">I've been telling myself I just need a vacation for two years. This finally gave me the words for what was actually happening. I've never highlighted so many lines in anything.</p>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">Sarah M.</span>
+          <span class="testimonial-role">Marketing Director, London</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">I kept waiting for it to feel preachy or tell me to wake up earlier. It never did. Just honest, calm, and scarily accurate. My husband read it after me and said "this is literally you."</p>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">Rachel T.</span>
+          <span class="testimonial-role">Freelance Designer, Toronto</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">The section on emotional numbness was the one. I've been functionally fine for years while feeling completely hollow inside. I thought I was the only one who experienced it like that.</p>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">James K.</span>
+          <span class="testimonial-role">Software Engineer, Austin TX</span>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Most self-help makes me feel worse about myself. This made me feel understood. There's a real difference. I read the whole thing in one sitting at 11pm which says everything about the writing.</p>
+        <div class="testimonial-meta">
+          <span class="testimonial-name">Priya N.</span>
+          <span class="testimonial-role">Nurse Practitioner, Melbourne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-featured reveal" style="max-width:700px; margin: 20px auto 0;">
+      <p class="featured-quote">"I've recommended this to four people in the last month. It's the first thing I've read that captures what modern exhaustion actually feels like — not as a failure, but as something that happened to a lot of us without our permission."</p>
+      <p class="featured-attribution">— Daniel F., entrepreneur, Amsterdam</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FAQ
+═══════════════════════════════ -->
+<section id="faq" style="max-width:700px; margin:0 auto; padding:96px 28px;">
+  <div class="faq-header reveal">
+    <div class="eyebrow" style="margin-bottom:16px;">Questions</div>
+    <h2 class="display">You might be wondering.</h2>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>What if I'm just lazy or unmotivated? Not actually burned out?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      Laziness, as a character trait, is much rarer than we're told. What gets labeled "laziness" is usually a nervous system that has spent too long in overdrive and is now conserving energy. If you were lazy, you wouldn't be here wondering whether something is wrong. That concern is itself a form of effort.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>I've tried self-help before and it never works for me. Why would this be different?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      Most self-help fails because it leads with solutions before the reader feels understood. When you don't feel understood, advice slides off you. This guide starts with emotional recognition — the science and the specific patterns of what happened to you — before anything practical. Understanding changes what advice is even possible to hear.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>I'm already overwhelmed. Will reading this add to that?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      This was written with your exhaustion in mind. Short chapters. No dense paragraphs. No long lists of things you need to do. Many readers describe it as calming rather than activating. The goal was to feel like relief, not homework.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>Is this therapy? Should I see someone instead?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      This is not therapy and is not a substitute for it. If you're experiencing significant distress, please do reach out to a professional. That said, many people benefit from understanding what's happening before or alongside therapy. This guide can be a companion to that process, not a replacement for it.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>How quickly will I feel better after reading this?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      Many readers report feeling something shift simply from having language for their experience. Understanding why you feel the way you do is, in itself, a form of relief. The practical tools take longer — genuine nervous system recovery is weeks and months, not days. But knowing what you're working with changes everything.
+    </div>
+  </div>
+
+  <div class="faq-item reveal">
+    <div class="faq-question" onclick="toggleFaq(this)">
+      <span>What makes this different from other burnout books?</span>
+      <span class="faq-toggle">+</span>
+    </div>
+    <div class="faq-answer">
+      Most burnout content focuses on high-performers who dramatically collapsed. This was written for the much larger group who never collapsed — who kept functioning while quietly depleting. The tone is specifically not motivational, not clinical, not preachy. It was designed to feel like a conversation with someone who understands the specific texture of modern exhaustion from the inside.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FINAL CTA
+═══════════════════════════════ -->
+<section id="final-cta">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">When Rest Stops Working</div>
+    <h2 class="cta-headline">You have been waiting<br>a long time to feel understood.</h2>
+    <p class="cta-body">This is that. A deeply human, psychologically grounded guide to what happened to your energy, your focus, your emotional life — and the quiet, realistic path back.</p>
+    <button class="btn-cta-final" onclick="window.open('https://nnamuah.gumroad.com/l/burnout-reset','_blank')">
+      <span>Get the Guide Now</span>
+      <span>→</span>
+    </button>
+    <p class="cta-reassurance">Instant download. Read anywhere. No subscription.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FOOTER
+═══════════════════════════════ -->
+<footer>
+  <p>This assessment and guide are for self-reflection and educational purposes only. They are not clinical tools, diagnoses, or substitutes for professional mental health support. If you are experiencing significant distress, please speak with a qualified professional.</p>
+</footer>
+
+<!-- ═══════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════ -->
+<script>
+/* ── QUIZ DATA ── */
+const questions = [
+  {
+    context: "How you begin your days",
+    text: "You wake up after a full night of sleep. What's the very first thing you actually feel?",
+    options: [
+      { text: "Mostly ready. Some mornings are heavier, but I usually feel okay.", score: 0 },
+      { text: "Like the tiredness just continued overnight. Not rested — just paused.", score: 2 },
+      { text: "A low, dull dread. The day feels heavy before it's started.", score: 3 },
+      { text: "I honestly can't remember the last time I woke up feeling actually rested.", score: 3 }
+    ]
+  },
+  {
+    context: "Your relationship with rest",
+    text: "You have a free evening. Nothing scheduled. What actually happens inside you?",
+    options: [
+      { text: "Genuine relief. I can switch off without much trouble.", score: 0 },
+      { text: "Nice in theory, but I find it harder to wind down than I used to.", score: 1 },
+      { text: "Restlessness. Guilt. Like I should be doing something, even when there's nothing to do.", score: 2 },
+      { text: "Anxiety, mostly. My body stops, but my mind won't. The quiet feels unsafe.", score: 3 }
+    ]
+  },
+  {
+    context: "Focus and concentration",
+    text: "When you try to do something that requires real concentration — what happens?",
+    options: [
+      { text: "I can focus well most of the time.", score: 0 },
+      { text: "It takes longer to get started than it used to.", score: 1 },
+      { text: "My attention keeps drifting. I reread things. Simple decisions feel strangely heavy.", score: 2 },
+      { text: "Real focus feels almost impossible. My mind moves constantly, even when I need it not to.", score: 3 }
+    ]
+  },
+  {
+    context: "Your phone and scrolling habits",
+    text: "How would you honestly describe your relationship with your phone right now?",
+    options: [
+      { text: "Pretty deliberate. I use it when I mean to, and put it down when I'm done.", score: 0 },
+      { text: "I check it more than I'd like, but I don't feel controlled by it.", score: 1 },
+      { text: "I scroll without deciding to. I put it down and pick it up again a few minutes later.", score: 2 },
+      { text: "Long stretches of scrolling without actually enjoying any of it. It's more like filling silence.", score: 3 }
+    ]
+  },
+  {
+    context: "Your emotional life",
+    text: "How are you feeling emotionally, if you're being completely honest with yourself?",
+    options: [
+      { text: "Generally engaged. I feel things at a normal depth.", score: 0 },
+      { text: "A bit flat. Some things that used to excite me just don't land the same way.", score: 1 },
+      { text: "Muted. Like there's a layer between me and my feelings. Things don't quite register.", score: 2 },
+      { text: "I'm not sure I feel much of anything. Everything is grey and a bit distant.", score: 3 }
+    ]
+  },
+  {
+    context: "What you tell yourself",
+    text: "When you feel overwhelmed or exhausted, what does your inner voice actually say?",
+    options: [
+      { text: "I notice it, try to rest, and give myself some grace.", score: 0 },
+      { text: "I tell myself it's temporary and push through to the other side.", score: 1 },
+      { text: "I remind myself other people have it harder. I tell myself I shouldn't complain.", score: 2 },
+      { text: "I feel ashamed of it. Like something is wrong with me for not handling this better.", score: 3 }
+    ]
+  },
+  {
+    context: "Things that used to bring joy",
+    text: "Think about the things that used to genuinely make you happy. How do they feel now?",
+    options: [
+      { text: "Still enjoyable. I look forward to them.", score: 0 },
+      { text: "Still good, but less vivid. The edge of pleasure has dulled slightly.", score: 1 },
+      { text: "I do them, but I don't quite feel them the way I used to. I'm going through the motions.", score: 2 },
+      { text: "Some of them I've stopped doing entirely. The motivation simply isn't there.", score: 3 }
+    ]
+  },
+  {
+    context: "Your body right now",
+    text: "Right now, as you read this — where are you holding tension in your body?",
+    options: [
+      { text: "I feel relatively relaxed, actually.", score: 0 },
+      { text: "My shoulders, a little. Easily released when I notice it.", score: 1 },
+      { text: "Jaw, shoulders, chest. I noticed as soon as you asked.", score: 2 },
+      { text: "Pretty much everywhere. I think I carry tension constantly without realising it.", score: 3 }
+    ]
+  },
+  {
+    context: "Social energy",
+    text: "How do you feel about being around other people these days?",
+    options: [
+      { text: "Good. I genuinely look forward to it and often leave feeling energised.", score: 0 },
+      { text: "Fine, though I need more recovery time afterward than I used to.", score: 1 },
+      { text: "Most social plans feel like obligations I have to get through.", score: 2 },
+      { text: "Mostly draining. Even people I love take something from me right now.", score: 3 }
+    ]
+  },
+  {
+    context: "The shape of your days",
+    text: "At the end of a typical day, how does it feel to look back on it?",
+    options: [
+      { text: "A sense of accomplishment. Most days feel like they mattered.", score: 0 },
+      { text: "Mixed. Some productivity, some frustration with myself.", score: 1 },
+      { text: "Like I was busy but not effective. Tired without feeling I earned it.", score: 2 },
+      { text: "Depleted. Like I gave everything the day asked for and have nothing remaining.", score: 3 }
+    ]
+  },
+  {
+    context: "Your sense of self",
+    text: "How connected do you feel to yourself — to who you are beneath the roles you play every day?",
+    options: [
+      { text: "Pretty connected. I know who I am outside of what I do.", score: 0 },
+      { text: "Somewhat. I think about it but rarely have space for it.", score: 1 },
+      { text: "I've lost some of that. Life has become mostly logistics and responsibilities.", score: 2 },
+      { text: "Like I'm watching my own life from a slight distance. An observer of myself.", score: 3 }
+    ]
+  },
+  {
+    context: "The question underneath everything",
+    text: "When you imagine a version of your life that feels genuinely lighter — less heavy, more real — does that feel possible?",
+    options: [
+      { text: "Yes. I have moments of lightness and believe I can grow them.", score: 0 },
+      { text: "I want to believe it, but it feels very far away right now.", score: 1 },
+      { text: "Only in the abstract. I've been in this fog long enough that lighter feels like a different life.", score: 2 },
+      { text: "I'm not sure I remember what that would even feel like. But I think I miss it.", score: 3 }
+    ]
+  }
+];
+
+const resultData = {
+  sage: {
+    theme: 'theme-sage',
+    tag: 'Early Overstimulation',
+    title: 'Your System Is Signalling.',
+    subtitle: "You haven't burned out yet. But your nervous system is sending you messages that are worth slowing down to listen to.",
+    mirrors: [
+      "Rest that feels slightly less restorative than it used to",
+      "A subtle flatness where there used to be more natural enthusiasm",
+      "Moments of fog or difficulty fully concentrating",
+      "Reaching for your phone more than you'd like, without really enjoying it"
+    ],
+    body: [
+      "You are at a meaningful crossroads. The patterns that lead to deep burnout are beginning to form — not because you're doing anything wrong, but because the world you're living in makes these patterns almost inevitable for anyone who is paying attention and trying hard.",
+      "The real news is genuinely good: you're catching this early. Your system hasn't shut down. It's signalling. The tiredness is a message, not a verdict. The slight disconnection is a nudge, not a collapse.",
+      "What you do with the next few months matters more than most people realize at this stage. This is the window where small, consistent changes in how you relate to rest, stimulation, and attention can prevent years of deeper depletion."
+    ],
+    encouragement: "You have more capacity for change right now than you probably give yourself credit for. The fact that you were curious enough to look is already a meaningful act.",
+    offerIntro: "You're at the stage where understanding the mechanics of what's happening in your brain and body can genuinely change your trajectory — not with a dramatic overhaul, just with clarity."
+  },
+  amber: {
+    theme: 'theme-amber',
+    tag: 'High-Functioning Burnout',
+    title: "You're Still Running.\nBut on Empty.",
+    subtitle: "You show up, perform, and hold everything together. And inside, something has been quietly running dry for longer than you've admitted.",
+    mirrors: [
+      "Functioning well externally while feeling hollow internally",
+      "Rest that doesn't restore — weekends that leave you no less tired",
+      "Emotional numbness where there used to be genuine feeling",
+      "Guilt when you're not being productive, even when you're exhausted",
+      "A growing distance from things and people you used to be present for"
+    ],
+    body: [
+      "This is one of the most common and least-recognised places a person can be. You're not in crisis. You haven't fallen apart. By almost every external measure, you are fine — maybe even impressive. But you know.",
+      "You know the performance costs more than it used to. That you're maintaining everything with reserves you haven't been able to replenish. That the gap between how your life looks and how your life feels has been widening for longer than you've admitted.",
+      "High-functioning burnout is particularly insidious because it removes the obvious signal to stop. When you're still meeting your deadlines and honouring your commitments, there's nothing pointing clearly to the problem — except the quiet, persistent voice inside that knows something needs to change.",
+      "You are not broken. You are depleted. And depletion has a way through — but it requires more than a better night's sleep or a holiday. It requires understanding what actually happened, and giving your system what it genuinely needs to recover."
+    ],
+    encouragement: "Naming what's happening — even quietly, even just to yourself — is the first real act of recovery. You've been carrying this for a long time. You don't have to figure it all out today. But you can start here.",
+    offerIntro: "What you're experiencing has specific causes, specific patterns, and a real path through. The guide below was written for exactly where you are right now."
+  },
+  rose: {
+    theme: 'theme-rose',
+    tag: 'Nervous System Overload',
+    title: "You've Been Carrying\nThis for a Long Time.",
+    subtitle: "The exhaustion runs deep. This is not a productivity problem, a motivation problem, or a character problem. This is a system that has been in emergency mode for far too long.",
+    mirrors: [
+      "Waking up tired even after sleeping",
+      "Emotional numbness — life viewed through grey",
+      "Feeling disconnected from yourself and the people around you",
+      "Brain fog and difficulty with tasks that should feel simple",
+      "A body that can't settle, even when nothing is pressing",
+      "A forgetting of what lighter even feels like"
+    ],
+    body: [
+      "Please stay with me here, because this is important: what you're experiencing is not weakness. It is not a failure of willpower or discipline. It is a perfectly healthy stress response that has been running continuously on a timeline it was never designed for.",
+      "Your nervous system has been holding you together through more than it should have to carry alone. The fog, the numbness, the exhaustion that doesn't lift, the distance from your own life — these are not signs that something is wrong with you. They are signs that your system has been working extraordinarily hard for a very long time.",
+      "The path forward from this depth of depletion is not more effort. It is not another self-improvement project. It is something quieter, slower, and more important than any of that: genuine safety. Learning — patiently, without self-punishment — that it is safe to stop bracing. Safe to rest without guilt. Safe to simply be, for a moment, without performing.",
+      "You may have forgotten what that feels like. That doesn't mean you can't find your way back."
+    ],
+    encouragement: "This much exhaustion requires more than a morning routine. It requires understanding what happened to your nervous system — and giving it what it actually needs. That is not weakness. That is the most intelligent response to where you are.",
+    offerIntro: "Recovery at this depth begins with understanding — with finally having language for what's been happening. That understanding is the first step, and it changes everything."
+  }
+};
+
+/* ── STATE ── */
+let currentQ = 0;
+let answers = new Array(questions.length).fill(null);
+let quizStarted = false;
+
+const loadingPhrases = [
+  'Reading your responses…',
+  'Looking for the patterns…',
+  'Putting language to it…',
+  'Almost ready…'
+];
+
+/* ── NAVIGATION ── */
+function jumpToQuiz() {
+  document.getElementById('quiz-anchor').scrollIntoView({ behavior: 'smooth' });
+}
+
+function beginQuiz() {
+  document.getElementById('start-card').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+  quizStarted = true;
+  renderQuestion();
+  // Hide post-quiz sections until results
+  document.getElementById('testimonials').style.display = 'none';
+  document.getElementById('faq').style.display = 'none';
+  document.getElementById('final-cta').style.display = 'none';
+  document.getElementById('quiz-anchor').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ── RENDER QUESTION ── */
+function renderQuestion() {
+  const wrap = document.getElementById('question-wrap');
+  wrap.classList.remove('visible');
+
+  setTimeout(() => {
+    const q = questions[currentQ];
+    document.getElementById('question-context').textContent = q.context;
+    document.getElementById('question-text').textContent = q.text;
+    document.getElementById('progress-count').textContent = `${currentQ + 1} of ${questions.length}`;
+    document.getElementById('progress-fill').style.width = `${(currentQ / questions.length) * 100}%`;
+
+    const grid = document.getElementById('options-grid');
+    grid.innerHTML = '';
+    const letters = ['a', 'b', 'c', 'd'];
+
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      if (answers[currentQ] !== null && answers[currentQ].index === i) {
+        btn.classList.add('selected');
+      }
+      btn.innerHTML = `<span class="option-letter">${letters[i]}</span><span class="option-text">${opt.text}</span>`;
+      btn.addEventListener('click', () => selectOption(i, opt.score, btn));
+      grid.appendChild(btn);
+    });
+
+    const nextBtn = document.getElementById('btn-next');
+    nextBtn.classList.toggle('active', answers[currentQ] !== null);
+    nextBtn.textContent = currentQ === questions.length - 1 ? 'See My Results →' : 'Continue →';
+    document.getElementById('btn-back').disabled = currentQ === 0;
+
+    wrap.classList.add('visible');
+  }, 150);
+}
+
+function selectOption(index, score, btn) {
+  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers[currentQ] = { index, score };
+  document.getElementById('btn-next').classList.add('active');
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < questions.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    showLoading();
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) { currentQ--; renderQuestion(); }
+}
+
+/* ── LOADING ── */
+function showLoading() {
+  document.getElementById('quiz-screen').style.display = 'none';
+  const ls = document.getElementById('loading-screen');
+  ls.style.display = 'flex';
+
+  let i = 0;
+  const wordEl = document.getElementById('loading-words');
+  const interval = setInterval(() => {
+    wordEl.style.opacity = '0';
+    setTimeout(() => {
+      i = (i + 1) % loadingPhrases.length;
+      wordEl.textContent = loadingPhrases[i];
+      wordEl.style.opacity = '1';
+    }, 300);
+  }, 900);
+
+  setTimeout(() => {
+    clearInterval(interval);
+    showResult();
+  }, 3800);
+}
+
+/* ── SHOW RESULT ── */
+function showResult() {
+  const total = answers.reduce((sum, a) => sum + (a ? a.score : 0), 0);
+
+  let result;
+  if (total <= 10)      result = resultData.sage;
+  else if (total <= 22) result = resultData.amber;
+  else                  result = resultData.rose;
+
+  document.getElementById('loading-screen').style.display = 'none';
+  const screen = document.getElementById('result-screen');
+  screen.style.display = 'block';
+
+  // Show post-quiz sections
+  document.getElementById('testimonials').style.display = '';
+  document.getElementById('faq').style.display = '';
+  document.getElementById('final-cta').style.display = '';
+
+  const container = document.getElementById('result-container');
+  container.className = result.theme;
+  container.innerHTML = `
+    <div class="result-header">
+      <div class="eyebrow result-eyebrow">Your Results</div>
+      <div class="result-tag">${result.tag}</div>
+      <h2 class="result-title">${result.title.replace(/\n/g, '<br>')}</h2>
+      <p class="result-subtitle">${result.subtitle}</p>
+    </div>
+
+    <div class="mirror-recognition">
+      <div class="mirror-recognition-title">What You Might Be Recognising Right Now</div>
+      ${result.mirrors.map(m => `<div class="mirror-recognition-item">${m}</div>`).join('')}
+    </div>
+
+    ${result.body.map(p => `<p class="result-body-text">${p}</p>`).join('')}
+
+    <div class="encouragement-block">
+      <p>${result.encouragement}</p>
+    </div>
+
+    <!-- ── OFFER ── -->
+    <div class="offer-section">
+      <div class="eyebrow offer-eyebrow">The Next Step</div>
+
+      <p class="offer-transition-headline">${result.offerIntro}</p>
+
+      <p class="offer-body">This is why <strong>When Rest Stops Working</strong> was written — for exactly where you are. Not a productivity system. Not a wellness checklist. A deeply honest, psychologically grounded companion for understanding what happened to your energy, your focus, and your inner life — and how to find your way back.</p>
+
+      <div class="offer-book-card">
+        <div class="offer-book-title">When Rest Stops Working</div>
+        <div class="offer-book-subtitle">A Guide to High-Functioning Burnout, Modern Mental Overload, and the Path Back to Yourself</div>
+
+        <div class="offer-features">
+          <div class="offer-feature">
+            <span class="feature-bullet">✦</span>
+            <span>Why rest stopped working — the neuroscience, finally in plain language</span>
+          </div>
+          <div class="offer-feature">
+            <span class="feature-bullet">✦</span>
+            <span>The specific hidden patterns behind high-functioning burnout that most people never name</span>
+          </div>
+          <div class="offer-feature">
+            <span class="feature-bullet">✦</span>
+            <span>Low-resistance nervous system recovery tools — nothing that requires heroic effort</span>
+          </div>
+          <div class="offer-feature">
+            <span class="feature-bullet">✦</span>
+            <span>A compassionate, honest path back to yourself — at the pace your system can actually manage</span>
+          </div>
+        </div>
+
+        <p class="offer-pullquote">"Not a self-help book. More like finally being seen."</p>
+
+        <button class="btn-offer" onclick="window.open('https://nnamuah.gumroad.com/l/burnout-reset','_blank')">
+          Read When Rest Stops Working →
+        </button>
+      </div>
+
+      <p class="offer-reassurance">Instant digital download · Read on any device · No subscription, no commitment</p>
+    </div>
+
+    <div style="margin-top:56px; padding-top:32px; border-top:1px solid var(--line); text-align:center;">
+      <button onclick="restartQuiz()" style="background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--fog);text-decoration:underline;text-underline-offset:3px;">Retake the assessment</button>
+    </div>
+  `;
+
+  screen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Re-init scroll reveals for new content
+  setTimeout(initReveal, 100);
+}
+
+/* ── RESTART ── */
+function restartQuiz() {
+  currentQ = 0;
+  answers = new Array(questions.length).fill(null);
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('start-card').style.display = 'block';
+  document.getElementById('testimonials').style.display = '';
+  document.getElementById('faq').style.display = '';
+  document.getElementById('final-cta').style.display = '';
+  document.getElementById('quiz-anchor').scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ── SCROLL REVEAL ── */
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', initReveal);
+</script>
+</body>
+</html>
